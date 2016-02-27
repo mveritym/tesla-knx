@@ -7,9 +7,40 @@ baos.API_SetCallbackIndicationUpdate(indicationUpdate);
 baos.API_SetCallbackInvalidSettings(invalidSettings);
 baos.API_SetCallbackTransmitError(transmitError);
 
+var defaultTemp = 20;
+
+$(function() {
+  $("#house-slider").slider({
+    orientation: "vertical",
+    range: "min",
+    min: 0,
+    max: 50,
+    value: defaultTemp,
+    step: 0.5,
+    slide: function( event, ui ) {
+      showTemp($("#house-slider").slider("value"));
+    },
+    stop: function( event, ui ) {
+      console.log("CHANGE TEMP OF HOUSE");
+    }
+  });
+  showTemp(defaultTemp);
+});
+
+function showTemp (temp) {
+  $("#house-temp").text(temp);
+}
+
+function setSlider (temp) {
+  $("#house-slider").slider("value", temp);
+}
+
 function getHouseTemp () {
   console.log("getting house temp");
-  baos.API_GetDatapointValue(10, 2, "DPT9");
+  // var temp = baos.API_GetDatapointValue(10, 2, "DPT9"); – CAN"T DO THIS UNTIL HOUSE CONNECTION IS WORKING
+  var temp = 21; // fake current temp of house
+  showTemp(temp);
+  setSlider(temp);
 }
 
 function setHouseTemp () {
