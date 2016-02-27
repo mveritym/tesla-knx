@@ -23,8 +23,7 @@
   "dependencies": {
     "body-parser": "^1.15.0",
     "ejs": "2.3.3",
-    "express": "4.13.3",
-    "teslams": "git@github.com:michaellennox/teslams.git"
+    "express": "4.13.3"
   },
   "devDependencies": {
     "nodemon": "^1.9.1"

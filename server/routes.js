@@ -2,11 +2,15 @@ var http = require("http");
 var express = require('express');
 var router = express.Router();
 
-var tesla_api = 'https://private-anon-0ceef6f72-timdorr.apiary-mock.com/api/1/vehicles/1/';
+var teslams = require('teslams');
+var creds = require('../credentials.js');
 
-router.post('/tesla_climate', function(req, res) {
-  http.post(tesla_api + 'commands/')
-  res.send('hello world');
+router.get('/tesla', function(req, res) {
+  teslams.get_vid({ email: creds.username, password: creds.password }, function (id) {
+  	teslams.get_vehicle_state(id , function (data) {
+  		res.json(data);
+  	});
+  });
 });
 
 module.exports = router;
