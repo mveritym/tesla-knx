@@ -7,13 +7,8 @@
     "start": "node index.js",
     "start-dev": "nodemon --debug index.js"
   },
-  "dependencies": {
-    "body-parser": "^1.15.0",
-    "ejs": "2.3.3",
-    "express": "4.13.3"
-  },
   "engines": {
-    "node": "0.12.7"
+    "node": "5.5.0"
   },
   "repository": {
     "type": "git",
@@ -25,6 +20,12 @@
     "express"
   ],
   "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "2.3.3",
+    "express": "4.13.3",
+    "teslams": "git@github.com:michaellennox/teslams.git"
+  },
   "devDependencies": {
     "nodemon": "^1.9.1"
   }
