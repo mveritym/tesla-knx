@@ -13,8 +13,8 @@ var House = function() {
 
   function getHouseTemp () {
     console.log("getting house temp");
-    // var temp = baos.API_GetDatapointValue(10, 2, "DPT9"); – CAN"T DO THIS UNTIL HOUSE CONNECTION IS WORKING
-    var temp = 21; // fake current temp of house
+    var temp = baos.API_GetDatapointValue(10, 2, "DPT9"); //– CAN"T DO THIS UNTIL HOUSE CONNECTION IS WORKING
+    temp = 21; // fake current temp of house
     showTemp(temp);
     setSlider(temp);
   }
@@ -57,6 +57,7 @@ var House = function() {
       stop: function( event, ui ) {
         console.log("CHANGE TEMP OF HOUSE");
         showTemp($("#house-slider").slider("value"));
+        setHouseTemp();
       }
     });
   }
