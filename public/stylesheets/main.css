@@ -37,7 +37,14 @@
   max-width: 100%;
 }
 
+.row {
+  width: 600px;
+  margin: auto;
+}
+
 .col-sm-4 {
+  width: 250px;
+  margin: auto;
   text-align: center;
 }
 
@@ -51,6 +58,6 @@
 }
 
 .ui-slider {
-  margin-left: 175px;
+  margin-left: 105px;
   text-align: center;
 }
